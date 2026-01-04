@@ -47,7 +47,7 @@ export default function SushiPlate() {
         if (item.id === Number(e.target.dataset.id)) {
             return {
                 ...item,
-                plateNum: item.plateNum - 1
+                plateNum: item.plateNum >= 1 ? item.plateNum - 1 : 0
             };
         } else {
             return item;
