@@ -55,6 +55,12 @@ export default function SushiPlate() {
     }));
   };
 
+  const handlePlateTypeDel = e => {
+    setPlates(plates.filter(item =>
+      item.id !== Number(e.target.dataset.id)
+    ));
+  };
+
   return (
     <div>
       <label>
@@ -75,6 +81,9 @@ export default function SushiPlate() {
             </button>
             <button type="button"
               onClick={handlePlateDel} data-id={item.id}>-
+            </button>
+            <button type="button"
+              onClick={handlePlateTypeDel} data-id={item.id}>削除
             </button>
           </li>
         ))}
