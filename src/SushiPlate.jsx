@@ -90,7 +90,11 @@ export default function SushiPlate() {
       </ul>
       <hr />
       <p>
-        合計：{plates.reduce((sum, plate) => {
+        お皿合計：{plates.reduce((sum, plate) => {
+          return sum + plate.plateNum;
+        }, 0)}
+        <br />
+        料金合計：{plates.reduce((sum, plate) => {
           return sum + plate.plateVal * plate.plateNum;
         }, 0)}
       </p>
