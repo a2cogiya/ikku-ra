@@ -10,7 +10,7 @@ import './SushiPlate.css';
 export default function SushiPlate() {
   const [maxId, setMaxId] = useState(1);
   const [plateVal, setPlateVal] = useState('');
-  const [plateNum, setPlateNum] = useState(0);
+  const [plateNum, setPlateNum] = useState(1);
   const [plates, setPlates] = useState([]);
   const [open, setOpen] = useState(false);
 
@@ -35,6 +35,7 @@ export default function SushiPlate() {
         return m.plateVal - n.plateVal;
       })
     );
+    setPlateVal('');
     setMaxId(id => id + 1);
   };
 
@@ -84,8 +85,8 @@ export default function SushiPlate() {
     <div>
       <TextField
         required
-        label="お皿の値段"
-        defaultValue=""
+        label="お皿の値段を入力"
+        value={plateVal}
         variant="standard"
         onChange={handleChangePlateVal}
       />
